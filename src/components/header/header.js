@@ -8,7 +8,8 @@ import { Text, Image, Flex } from '@chakra-ui/core'
 const Header = ({ pageTitle, subTitle, isLarge }) => {
     const links = {
         as: "li",
-        color: "#414141"
+        color: "#414141",
+        px: [3, 6]
     }
 
     return (
@@ -30,15 +31,15 @@ const Header = ({ pageTitle, subTitle, isLarge }) => {
                     style={{ "font-family": 'Dosis' }}>{subTitle}</Text>}
             </Flex>}
 
-            <Flex justify="space-between" wrap="wrap" mt="50px">
-                <Flex as="ul" minW="500px" w="30vw" justify="space-around" mb="6" ml="16">
+            <Flex justify="space-between" direction={["column", "column", "row"]} align="center" wrap="wrap" mt="50px">
+                <Flex as="ul" w="30vw" minW="320px" justify="space-around" mb="6" ml={[0, 0, 16]}>
                     <Link to='/'><Text {...links}>Home</Text></Link>
                     <Link to='/'><Text {...links}>Tabs</Text></Link>
                     <Link to='/'><Text {...links}>Authors</Text></Link>
                     <Link to='/'><Text {...links}>Archive</Text></Link>
                     <Link to='/'><Text {...links}>Help</Text></Link>
                 </Flex>
-                <Flex justify="space-around" w="250px" mb="6" mr="10">
+                <Flex justify="space-around" w="250px" mb="6" mr={[0, 0, 10]}>
                     <a href="https://twitter.com/dropinblog" target="blank"><Image src="./twitter.svg" alt="Twitter Logo" h="40px" /></a>
                     <a href="https://github.com/DynamisDevelopment/dib-gatsby-starter" target="blank"><Image src="./github.svg" alt="Github Logo" h="40px" /></a>
                     <a href="https://m.me/dropinblog" target="blank"><Image src="./messenger.svg" alt="Messenger Logo" h="40px" /></a>

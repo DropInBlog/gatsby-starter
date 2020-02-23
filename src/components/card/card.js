@@ -8,7 +8,9 @@ import { Image, Text, Flex } from '@chakra-ui/core'
 const Card = ({ post, tab }) => {
     return (
         <Flex flexDirection="column" align="center" px={8} >
-            <Image src={post.featuredImage} rounded="5%" />
+            <Link to={"archive/" + post.slug}>
+                <Image src={post.featuredImage} rounded="5%" />
+            </Link>
             <Link to={"tabs/" + tab.slug}>
                 <Text py={3} color="#696969" fontSize="lg"
                     style={{ "font-family": 'Dosis' }}>{tab.title}</Text>
@@ -16,13 +18,13 @@ const Card = ({ post, tab }) => {
             <Text
                 fontSize="2xl"
                 fontWeight="500"
-                w="90%"
+                w="80%"
                 textAlign="center"
-                mb="2"
+                mb={3}
                 style={{ "font-family": 'Dosis' }}>{post.title}</Text>
             <Text fontFamily="Roboto"
                 fontWeight="300"
-                fontSize="md" >{post.summary}</Text>
+                fontSize="md">{post.summary}</Text>
 
             <Flex align="center" justify="space-between" w="100%" m={3}>
                 <Flex align="center">
