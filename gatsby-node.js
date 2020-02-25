@@ -26,7 +26,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
 
     // * Tabs
-    const tabTemplate = path.resolve('./src/templates/tabs/tab.js')
+    const tabTemplate = path.resolve('./src/templates/tab/tab.js')
     const tabs = await graphql(`
         query {
             customApi {

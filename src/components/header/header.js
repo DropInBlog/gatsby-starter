@@ -5,6 +5,10 @@ import './header.sass'
 // * Components 
 import { Text, Image, Flex } from '@chakra-ui/core'
 
+// * Styles 
+import '../../styles/global.sass'
+import './header.sass'
+
 const Header = ({ pageTitle, subTitle, isLarge }) => {
     const links = {
         as: "li",

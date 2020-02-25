@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from 'gatsby'
-import '../styles/global.sass'
 
 // * Components 
 import Header from '../components/header/header'
