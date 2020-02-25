@@ -1,7 +1,7 @@
 import React from 'react'
-import './tips.sass'
+import './tabs.sass'
 
-const TipsPage = () => {
+const TabsPage = () => {
     return (
         <div>
 
@@ -9,4 +9,4 @@ const TipsPage = () => {
     )
 }
 
-export default TipsPage
+export default TabsPage

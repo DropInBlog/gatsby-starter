@@ -1,5 +1,5 @@
 import React from 'react'
-import './archive.sass'
+import '../styles/archive.sass'
 
 const ArchivePage = () => {
     return (

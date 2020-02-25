@@ -29,7 +29,9 @@ const Card = ({ post, tab }) => {
             <Flex align="center" justify="space-between" w="100%" m={3}>
                 <Flex align="center">
                     <Image src={post.author.photo} size="50px" rounded="full" mr={2} />
-                    <Text fontSize="md" color="#545454">{post.author.name} · {post.publishedAt}</Text>
+                    <Text fontSize="md" color="#545454">
+                        <Link to={'/authors/' + post.author.slug}>{post.author.name} </Link>
+                        · {post.publishedAt}</Text>
                 </Flex>
 
                 <Text fontSize="sm" color="#545454">{post.readtime}</Text>

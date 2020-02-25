@@ -27,6 +27,7 @@ const Home = () => {
                     author {
                         name
                         photo
+                        slug
                     }
                 }
             }

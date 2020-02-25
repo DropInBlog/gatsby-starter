@@ -1,5 +1,5 @@
 import React from 'react'
-import './authors.sass'
+import '../styles/authors.sass'
 
 const AuthorsPage = () => {
     return (
