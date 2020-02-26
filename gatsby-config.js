@@ -9,7 +9,28 @@ module.exports = {
         {
             resolve: "gatsby-source-custom-api",
             options: {
+                rootKey: 'posts',
                 url: `https://api.dropinblog.com/v1/json/?b=${process.env.DIB_KEY}`
+            }
+        },
+        {
+            resolve: "gatsby-source-custom-api",
+            options: {
+                rootKey: 'categories',
+                url: `https://api.dropinblog.com/v1/json/categories/?b=${process.env.DIB_KEY}`,
+                schemas: {
+                    data: `
+                        title: String 
+                        slug: String
+                    `
+                }
+            }
+        },
+        {
+            resolve: "gatsby-source-custom-api",
+            options: {
+                rootKey: 'authors',
+                url: `https://api.dropinblog.com/v1/json/authors/?b=${process.env.DIB_KEY}`
             }
         }
     ]

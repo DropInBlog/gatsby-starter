@@ -18,12 +18,14 @@ const Header = ({ pageTitle, subTitle, isLarge }) => {
 
     return (
         <Flex bg="#FCE3D6" direction="column" justify="space-between" w="100%" color="FCE3D6" >
-            <Flex justify={["center", "flex-start"]}>
-                <Image ml={["0", "16"]}
-                    pt="6" h="80px"
-                    src="./dropInBlog-logo.png" alt="DropInBlog Logo"
-                    className="logo" />
-            </Flex>
+            <Link to='/'>
+                <Flex justify={["center", "flex-start"]}>
+                    <Image ml={["0", "16"]}
+                        pt="6" h="80px"
+                        src="../dropInBlog-logo.png" alt="DropInBlog Logo"
+                        className="logo" />
+                </Flex>
+            </Link>
 
             {pageTitle && <Flex direction="column" align="center" justify="center" h={isLarge ? "60vh" : "150px"}>
                 <Text fontSize={["4xl", "5xl", "6xl"]}
@@ -38,15 +40,15 @@ const Header = ({ pageTitle, subTitle, isLarge }) => {
             <Flex justify="space-between" direction={["column", "column", "row"]} align="center" wrap="wrap" mt="50px">
                 <Flex as="ul" w="30vw" minW="320px" justify="space-around" mb="6" ml={[0, 0, 16]}>
                     <Link to='/'><Text {...links}>Home</Text></Link>
-                    <Link to='/'><Text {...links}>Tabs</Text></Link>
-                    <Link to='/'><Text {...links}>Authors</Text></Link>
-                    <Link to='/'><Text {...links}>Archive</Text></Link>
-                    <Link to='/'><Text {...links}>Help</Text></Link>
+                    <Link to='/tabs'><Text {...links}>Tabs</Text></Link>
+                    <Link to='/authors'><Text {...links}>Authors</Text></Link>
+                    <Link to='/archive'><Text {...links}>Archive</Text></Link>
+                    <a href='https://dropinblog.com/contact/'><Text {...links}>Help</Text></a>
                 </Flex>
                 <Flex justify="space-around" w="250px" mb="6" mr={[0, 0, 10]}>
-                    <a href="https://twitter.com/dropinblog" target="blank"><Image src="./twitter.svg" alt="Twitter Logo" h="40px" /></a>
-                    <a href="https://github.com/DynamisDevelopment/dib-gatsby-starter" target="blank"><Image src="./github.svg" alt="Github Logo" h="40px" /></a>
-                    <a href="https://m.me/dropinblog" target="blank"><Image src="./messenger.svg" alt="Messenger Logo" h="40px" /></a>
+                    <a href="https://twitter.com/dropinblog" target="blank"><Image src="../twitter.svg" alt="Twitter Logo" h="40px" /></a>
+                    <a href="https://github.com/DynamisDevelopment/dib-gatsby-starter" target="blank"><Image src="../github.svg" alt="Github Logo" h="40px" /></a>
+                    <a href="https://m.me/dropinblog" target="blank"><Image src="../messenger.svg" alt="Messenger Logo" h="40px" /></a>
                 </Flex>
             </Flex>
         </Flex>

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 // * Components 
 import Header from '../components/header/header'
@@ -10,7 +10,7 @@ import { Flex, Grid } from '@chakra-ui/core'
 const Home = () => {
     const data = useStaticQuery(graphql`
     query {
-        customApi {
+        posts {
             data {
                 posts {
                     title 
@@ -34,7 +34,7 @@ const Home = () => {
         }
     `)
 
-    const posts = data.customApi.data.posts
+    const posts = data.posts.data.posts
 
     return (
         <div>
