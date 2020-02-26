@@ -17,13 +17,7 @@ module.exports = {
             resolve: "gatsby-source-custom-api",
             options: {
                 rootKey: 'categories',
-                url: `https://api.dropinblog.com/v1/json/categories/?b=${process.env.DIB_KEY}`,
-                schemas: {
-                    data: `
-                        title: String 
-                        slug: String
-                    `
-                }
+                url: `https://api.dropinblog.com/v1/json/categories/?b=${process.env.DIB_KEY}`
             }
         },
         {
