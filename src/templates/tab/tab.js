@@ -12,45 +12,42 @@ import './tabs.sass'
 
 export const data = graphql`
 query($slug: String!) {
-    categories(data: {elemMatch: {slug: {eq: $slug}}}) {
-        data {
-            title
-            slug
-        }
+    dibCategories(slug: {eq: $slug}) {
+        title
+        slug
     }
-    posts(data: { posts: { elemMatch: {categories: { elemMatch: {slug: {eq: $slug}}} }}}) {
-            data {
-                posts {
+    allDibPosts(filter: {categories: {elemMatch: {slug: {eq: $slug}}}}) {
+        edges {
+            node {
+                title 
+                summary 
+                slug 
+                publishedAt
+                readTime
+                featuredImage
+                categories {
                     title 
-                    summary 
-                    slug 
-                    publishedAt
-                    readtime
-                    featuredImage
-                    categories {
-                        title
-                        slug
-                    }
-                    author {
-                        name
-                        photo
-                        slug
-                    }
+                    slug
                 }
-            }    
+                author {
+                    name 
+                    slug
+                    photo 
+                }
+            }
         }
     }
-`
+}`
+
 const TabsPage = props => {
-    console.log(props.data.categories)
-    const posts = props.data.posts.data.posts
-    const category = props.data.categories.data
+    const posts = props.data.allDibPosts.edges
+    const category = props.data.dibCategories
     return (
         <div>
             <Header pageTitle={category.title} />
             <Flex justify="center" mt={12}>
                 <Grid templateColumns="repeat(auto-fit, minmax(320px, 1fr))" autoFlow="row" gap={[8, 8, 4, 1]} className='container'>
-                    {posts.map(post => <Card post={post} tab={post.categories[0]} />)}
+                    {posts.map(post => <Card post={post.node} tab={category} />)}
                 </Grid>
             </Flex>
             <Footer />
