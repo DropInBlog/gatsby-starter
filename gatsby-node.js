@@ -1,18 +1,25 @@
 const path = require("path")
 
 // * Because DropInBlog delivers everything in an array (data) inside a single object, like authors or categories, we're not able to use any of the goodies that Gatsby gives us, like filter. 
-//  * To get around this we have to remap the data array onto a custom type. 
+// * To get around this we have to remap the data array onto a custom type. 
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
     const { createTypes } = actions
+
+    const returnItem = async (source, ctx, item, arr, nestedArr) => {
+        const parent = await ctx.nodeModel.getNodeById({ id: source.parent })
+
+        if (nestedArr) return parent.posts[source.place][item].map(edge => edge)
+        else return parent[arr][source.place][item]
+    }
 
     // * Authors
     createTypes([`
         interface Authors @nodeInterface {
             id: ID!
-            name: String!
-            slug: String! 
-            photo: String!
+            name: String
+            slug: String
+            photo: String
         }
     `,
         schema.buildObjectType({
@@ -21,25 +28,16 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
             fields: {
                 id: 'ID!',
                 name: {
-                    type: 'String!',
-                    resolve: async (source, args, ctx, info) => {
-                        const parent = await ctx.nodeModel.getNodeById({ id: source.parent })
-                        return parent.data[source.place].name
-                    }
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'name', 'data')
                 },
                 slug: {
-                    type: 'String!',
-                    resolve: async (source, args, ctx, info) => {
-                        const parent = await ctx.nodeModel.getNodeById({ id: source.parent })
-                        return parent.data[source.place].slug
-                    }
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'slug', 'data')
                 },
                 photo: {
-                    type: 'String!',
-                    resolve: async (source, args, ctx, info) => {
-                        const parent = await ctx.nodeModel.getNodeById({ id: source.parent })
-                        return parent.data[source.place].photo
-                    }
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'photo', 'data')
                 }
             }
         })
@@ -49,8 +47,8 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     createTypes([`
         interface Categories @nodeInterface {
             id: ID!
-            title: String!
-            slug: String! 
+            title: String
+            slug: String
         }
     `,
         schema.buildObjectType({
@@ -59,18 +57,12 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
             fields: {
                 id: 'ID!',
                 title: {
-                    type: 'String!',
-                    resolve: async (source, args, ctx, info) => {
-                        const parent = await ctx.nodeModel.getNodeById({ id: source.parent })
-                        return parent.data[source.place].title
-                    }
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'title', 'data')
                 },
                 slug: {
-                    type: 'String!',
-                    resolve: async (source, args, ctx, info) => {
-                        const parent = await ctx.nodeModel.getNodeById({ id: source.parent })
-                        return parent.data[source.place].slug
-                    }
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'slug', 'data')
                 }
             }
         })
@@ -78,10 +70,29 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 
     // * Posts 
     createTypes([`
+        type categoryData {
+            title: String 
+            slug: String
+        }
+
+        type authorData {
+            name: String 
+            slug: String 
+            photo: String
+        }
+
         interface Posts @nodeInterface {
             id: ID!
-            title: String!
-            slug: String! 
+            title: String
+            slug: String
+            summary: String
+            content: String 
+            featuredImage: String 
+            publishedAt: String 
+            updatedAt: String 
+            categories: [categoryData!]
+            author: authorData
+            readTime: String
         }
     `,
         schema.buildObjectType({
@@ -90,19 +101,45 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
             fields: {
                 id: 'ID!',
                 title: {
-                    type: 'String!',
-                    resolve: async (source, args, ctx, info) => {
-                        const parent = await ctx.nodeModel.getNodeById({ id: source.parent })
-                        return parent.posts[source.place].title
-                    }
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'title', 'posts')
                 },
                 slug: {
-                    type: 'String!',
-                    resolve: async (source, args, ctx, info) => {
-                        const parent = await ctx.nodeModel.getNodeById({ id: source.parent })
-                        return parent.posts[source.place].slug
-                    }
-                }
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'slug', 'posts')
+                },
+                summary: {
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'summary', 'posts')
+                },
+                content: {
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'content', 'posts')
+                },
+                featuredImage: {
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'featuredImage', 'posts')
+                },
+                publishedAt: {
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'publishedAt', 'posts')
+                },
+                updatedAt: {
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'updatedAt', 'posts')
+                },
+                categories: {
+                    type: '[categoryData!]',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'categories', 'posts', true)
+                },
+                author: {
+                    type: 'authorData',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'author', 'posts')
+                },
+                readTime: {
+                    type: 'String',
+                    resolve: async (source, args, ctx, info) => returnItem(source, ctx, 'readtime', 'posts')
+                },
             }
         })
     ])
@@ -144,15 +181,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
                     slug
                   }
                 }
-              }
+            }
           }
         `)
 
     posts.data.allDibPosts.edges.forEach(post => {
         createPage({
             component: postTemplate,
-            path: `/posts/${post.slug}`,
-            context: { slug: post.slug }
+            path: `/posts/${post.node.slug}`,
+            context: { slug: post.node.slug }
         })
     })
 
@@ -173,8 +210,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
     tabs.data.allDibCategories.edges.forEach(tab => {
         createPage({
             component: tabTemplate,
-            path: `/tabs/${tab.slug}`,
-            context: { slug: tab.slug }
+            path: `/tabs/${tab.node.slug}`,
+            context: { slug: tab.node.slug }
         })
     })
 
@@ -195,8 +232,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
     profiles.data.allDibAuthors.edges.forEach(profile => {
         createPage({
             component: profileTemplate,
-            path: `/authors/${profile.slug}`,
-            context: { slug: profile.slug }
+            path: `/authors/${profile.node.slug}`,
+            context: { slug: profile.node.slug }
         })
     })
 }

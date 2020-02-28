@@ -34,7 +34,7 @@ const Header = ({ pageTitle, subTitle, isLarge }) => {
                     style={{ "font-family": 'Dosis' }}> {pageTitle}</Text>
                 {subTitle && <Text fontSize={["lg", "xl", "2xl"]}
                     fontWeight="500"
-                    style={{ "font-family": 'Dosis' }}>{subTitle}</Text>}
+                    style={{ "fontFamily": 'Dosis' }}>{subTitle}</Text>}
             </Flex>}
 
             <Flex justify="space-between" direction={["column", "column", "row"]} align="center" wrap="wrap" mt="50px">

@@ -5,15 +5,16 @@ import './card.sass'
 // * Components 
 import { Image, Text, Flex } from '@chakra-ui/core'
 
-const Card = ({ post, tab }) => {
+const Card = ({ post }) => {
+    const category = post.categories[0]
     return (
         <Flex flexDirection="column" align="center" px={8} >
             <Link to={"posts/" + post.slug}>
                 <Image src={post.featuredImage} rounded="5%" />
             </Link>
-            <Link to={"tabs/" + tab.slug}>
+            <Link to={"tabs/" + category.slug}>
                 <Text py={3} color="#696969" fontSize="lg"
-                    style={{ "font-family": 'Dosis' }}>{tab.title}</Text>
+                    style={{ "font-family": 'Dosis' }}>{category.title}</Text>
             </Link>
             <Text
                 fontSize="2xl"
