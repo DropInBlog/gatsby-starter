@@ -13,38 +13,37 @@ import '../styles/archive.sass'
 const ArchivePage = () => {
     const data = useStaticQuery(graphql`
     query {
-        posts {
-            data {
-                posts {
-                    title 
-                    summary 
-                    slug 
-                    publishedAt
-                    readtime
-                    featuredImage
-                    categories {
-                        title
-                        slug
-                    }
-                    author {
-                        name
-                        photo
-                        slug
-                    }
+        allDibPosts(sort: {order: DESC, fields: publishedAt})  {
+            edges {
+            node {
+                title 
+                summary 
+                slug 
+                publishedAt
+                readTime
+                featuredImage
+                categories {
+                    title
+                    slug
                 }
+                author {
+                    name
+                    photo
+                    slug
+                }
+              }
             }
         }
-        }
-    `)
+    }`)
 
-    const posts = data.posts.data.posts
+    const posts = data.allDibPosts.edges
 
     return (
         <div>
             <Header pageTitle="Archive" />
             <Flex justify="center" mt={12}>
                 <Grid templateColumns="repeat(auto-fit, minmax(320px, 1fr))" autoFlow="row" gap={[8, 8, 4, 1]} className='container'>
-                    {posts.map(post => <Card post={post} tab={post.categories[0]} />)}
+                    {posts.map(post => <Card post={post.node} tab={post.node.categories[0]} />)}
                 </Grid>
             </Flex>
             <Footer />
