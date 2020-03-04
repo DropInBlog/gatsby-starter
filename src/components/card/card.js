@@ -34,7 +34,7 @@ const Card = ({ post, tab }) => {
                         · {post.publishedAt}</Text>
                 </Flex>
 
-                <Text fontSize="sm" color="#545454">{post.readtime}</Text>
+                <Text fontSize="sm" color="#545454">{post.readTime}</Text>
             </Flex>
         </Flex>
     )

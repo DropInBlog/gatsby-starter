@@ -9,7 +9,7 @@ import { Text, Image, Flex } from '@chakra-ui/core'
 import '../../styles/global.sass'
 import './header.sass'
 
-const Header = ({ pageTitle, subTitle, isLarge }) => {
+const Header = ({ pageTitle, subTitle, isLarge, Extras }) => {
     const links = {
         as: "li",
         color: "#414141",
@@ -27,7 +27,7 @@ const Header = ({ pageTitle, subTitle, isLarge }) => {
                 </Flex>
             </Link>
 
-            {pageTitle && <Flex direction="column" align="center" justify="center" h={isLarge ? "60vh" : "150px"}>
+            {pageTitle && <Flex direction="column" align="center" justify="center" h={isLarge ? "60vh" : "110%"}>
                 <Text fontSize={["4xl", "5xl", "6xl"]}
                     fontWeight="600"
                     mb="6" mt={isLarge && "-75px"}
@@ -35,7 +35,9 @@ const Header = ({ pageTitle, subTitle, isLarge }) => {
                 {subTitle && <Text fontSize={["lg", "xl", "2xl"]}
                     fontWeight="500"
                     style={{ "fontFamily": 'Dosis' }}>{subTitle}</Text>}
+                    
             </Flex>}
+            {Extras && <Extras />}
 
             <Flex justify="space-between" direction={["column", "column", "row"]} align="center" wrap="wrap" mt="50px">
                 <Flex as="ul" w="30vw" minW="320px" justify="space-around" mb="6" ml={[0, 0, 16]}>

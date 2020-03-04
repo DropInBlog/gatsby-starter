@@ -9,7 +9,7 @@ import { Flex, Text, Image } from '@chakra-ui/core'
 
 // * Styles
 import '../styles/authors.sass'
-
+ 
 const AuthorsPage = () => {
     const data = useStaticQuery(graphql`
     query {
@@ -33,18 +33,16 @@ const AuthorsPage = () => {
             {authors.map((author, index)=> {
                 return <Link to={'/authors/' + author.node.slug}>
                     <Flex key={index} justify="space-around" my={10}>
-                        <Link to={'/authors/' + author.node.slug}>
-                            <Flex flexDirection="column" justify="center">
-                                <Text fontSize="5xl" 
-                                    fontWeight="bold" 
-                                    color="#414141"
-                                    style={{ "font-family": 'Dosis' }}>{author.node.name}</Text>
-                                <Text fontSize="2xl"
-                                    fontWeight="600"
-                                    color="#FC8346"
-                                    style={{ "font-family": 'Dosis' }}>3 Articles</Text>
-                            </Flex>
-                        </Link>
+                        <Flex flexDirection="column" justify="center">
+                            <Text fontSize="5xl" 
+                                fontWeight="bold" 
+                                color="#414141"
+                                style={{ "font-family": 'Dosis' }}>{author.node.name}</Text>
+                            <Text fontSize="2xl"
+                                fontWeight="600"
+                                color="#FC8346"
+                                style={{ "font-family": 'Dosis' }}>3 Articles</Text>
+                        </Flex>
                         <Image src={author.node.photo} size="150px" rounded="full"/>
                     </Flex>
                 </Link>

@@ -45,8 +45,8 @@ const TabsPage = props => {
     return (
         <div>
             <Header pageTitle={category.title} />
-            <Flex justify="space-around" mt={12}>
-                <Grid templateColumns="repeat(auto-fit, minmax(320px, 1fr))" autoFlow="row" gap={[8, 8, 4, 1]} className='container'>
+            <Flex mt={12} justify={posts.length > 1 && "center"}>
+                <Grid w="100vw" templateColumns="repeat(auto-fit, minmax(320px, 1fr))" justifyItems="center" autoFlow="row" gap={[8, 8, 4, 1]} className={posts.length > 1 && "container"}>
                     {posts.map(post => <Card post={post.node} tab={category} />)}
                 </Grid>
             </Flex>
