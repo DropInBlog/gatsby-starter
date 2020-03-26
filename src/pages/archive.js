@@ -42,7 +42,7 @@ const ArchivePage = () => {
         <div>
             <Header pageTitle="Archive" />
             <Flex justify="center" mt={12}>
-                <Grid templateColumns="repeat(auto-fit, minmax(320px, 1fr))" autoFlow="row" gap={[8, 8, 4, 1]} className='container'>
+                <Grid templateColumns="repeat(auto-fit, minmax(320px, 1fr))" autoFlow="row" justifyItems="center" gap={[8, 8, 4, 1]} className='container'>
                     {posts.map(post => <Card post={post.node} tab={post.node.categories[0]} />)}
                 </Grid>
             </Flex>

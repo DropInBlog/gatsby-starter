@@ -39,7 +39,7 @@ const Home = () => {
         <div>
             <Header pageTitle="Dib in Gatsby" subTitle="Instant blog on any site in only 3 minutes" isLarge />
             <Flex justify="space-around" mt={12}>
-                <Grid templateColumns="repeat(auto-fit, minmax(320px, 1fr))" autoFlow="row" gap={[8, 8, 4, 1]} className='container'>
+                <Grid templateColumns="repeat(auto-fit, minmax(320px, 1fr))" justifyItems="center" autoFlow="row" gap={[8, 8, 4, 1]} className='container'>
                     {posts.map((post, index) => <Card post={post.node} tab={post.node.categories[0]} key={index}/>)}
                 </Grid>
             </Flex>

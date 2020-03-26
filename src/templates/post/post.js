@@ -90,7 +90,7 @@ const PostPage = props => {
             <Flex css={textSizing} justify="center" w="screen">
                 <Box 
                     mt={8}
-                    px={16}
+                    px={[4, 8, 12, 16]}
                     maxWidth="1000px"
                     dangerouslySetInnerHTML={{__html: post.content}}></Box>
             </Flex>

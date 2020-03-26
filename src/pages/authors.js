@@ -30,24 +30,25 @@ const AuthorsPage = () => {
         <div>
             <Header pageTitle="Authors" />
             <Flex flexDirection="column" mt={12} >
+
             {authors.map((author, index)=> {
                 return <Link to={'/authors/' + author.node.slug}>
                     <Flex key={index} justify="space-around" my={10}>
                         <Flex flexDirection="column" justify="center">
-                            <Text fontSize="5xl" 
+                            <Text fontSize={["4xl", "4xl", "5xl", "6xl"]}
                                 fontWeight="bold" 
                                 color="#414141"
                                 style={{ "font-family": 'Dosis' }}>{author.node.name}</Text>
-                            <Text fontSize="2xl"
+                            <Text fontSize={["lg", "xl", "2xl"]}
                                 fontWeight="600"
                                 color="#FC8346"
                                 style={{ "font-family": 'Dosis' }}>3 Articles</Text>
                         </Flex>
-                        <Image src={author.node.photo} size="150px" rounded="full"/>
+                        <Image src={author.node.photo} size={["100px", "120px", "140px"]} rounded="full"/>
                     </Flex>
-                </Link>
-                
+                </Link> 
             })}
+
             </Flex>
             <Footer />
         </div>

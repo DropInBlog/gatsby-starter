@@ -47,11 +47,12 @@ const ProfilePage = props => {
     const AuthorInfo = () => {
         return (
             <Flex flexDirection="column" alignItems="center">
-                <Image src={author.photo} size="150px" rounded="full"/>
+                <Image src={author.photo} size={["100px", "120px", "140px"]} rounded="full" mt="30px"/>
                 <Text fontSize="5xl" 
                     fontWeight="bold" 
                     color="#414141"
                     mt={6}
+                    textAlign="center"
                     style={{ "font-family": 'Dosis' }}>Posts by {author.name}</Text>
             </Flex>
         )
