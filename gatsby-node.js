@@ -1,6 +1,6 @@
 const path = require("path")
 
-// * Because DropInBlog delivers everything in an array (data) inside a single object, like authors or categories, we're not able to use any of the goodies that Gatsby gives us, like filter. 
+// * Because DropInBlog delivers everything in an array (data) inside a single object, like authors or categories, we're not able to use any of the goodies that Gatsby gives us, like filter.
 // * To get around this we have to remap the data array onto a custom type. 
 
 exports.createSchemaCustomization = ({ actions, schema }) => {

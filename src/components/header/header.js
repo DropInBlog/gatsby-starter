@@ -31,7 +31,7 @@ const Header = ({ pageTitle, subTitle, isLarge, Extras }) => {
                 <Text fontSize={["4xl", "5xl", "6xl"]}
                     fontWeight="600"
                     mb="6" mt={isLarge && "-75px"}
-                    style={{ "font-family": 'Dosis' }}> {pageTitle}</Text>
+                    style={{ "fontFamily": 'Dosis' }}> {pageTitle}</Text>
                 {subTitle && <Text fontSize={["lg", "xl", "2xl"]}
                     fontWeight="500"
                     style={{ "fontFamily": 'Dosis' }}>{subTitle}</Text>}
@@ -42,7 +42,6 @@ const Header = ({ pageTitle, subTitle, isLarge, Extras }) => {
             <Flex justify="space-between" direction={["column", "column", "row"]} align="center" wrap="wrap" mt="50px">
                 <Flex as="ul" w="30vw" minW="320px" justify="space-around" mb="6" ml={[0, 0, 16]}>
                     <Link to='/'><Text {...links}>Home</Text></Link>
-                    <Link to='/tabs'><Text {...links}>Tabs</Text></Link>
                     <Link to='/authors'><Text {...links}>Authors</Text></Link>
                     <Link to='/archive'><Text {...links}>Archive</Text></Link>
                     <a href='https://dropinblog.com/contact/'><Text {...links}>Help</Text></a>

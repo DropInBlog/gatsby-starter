@@ -29,10 +29,9 @@ const Footer = () => {
                 justify="space-around"
                 align="center">
                 <Link to='/'><Text {...links}>Home</Text></Link>
-                <Link to='/'><Text {...links}>Tabs</Text></Link>
-                <Link to='/'><Text {...links}>Authors</Text></Link>
-                <Link to='/'><Text {...links}>Archive</Text></Link>
-                <Link to='/'><Text {...links}>Help</Text></Link>
+                <Link to='/authors'><Text {...links}>Authors</Text></Link>
+                <Link to='/archive'><Text {...links}>Archive</Text></Link>
+                <a href='https://dropinblog.com/contact/'><Text {...links}>Help</Text></a>
             </Flex>
         </Flex>
     )

@@ -6,11 +6,12 @@ module.exports = {
     },
     plugins: [
         'gatsby-plugin-sass',
+        'gatsby-plugin-emotion',
         {
             resolve: "gatsby-source-custom-api",
             options: {
                 rootKey: 'posts',
-                url: `https://api.dropinblog.com/v1/json/?b=${process.env.DIB_KEY}`
+                url: `https://api.dropinblog.com/v1/json/?b=${process.env.DIB_KEY}&includecontent=1`
             }
         },
         {

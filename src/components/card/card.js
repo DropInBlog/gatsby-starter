@@ -23,16 +23,18 @@ const Card = ({ post, tab }) => {
                 mb={3}
                 style={{ "font-family": 'Dosis' }}>{post.title}</Text>
             <Text fontFamily="Roboto"
-                fontWeight="300"
+                fontWeight="200"
                 fontSize="md">{post.summary}</Text>
 
             <Flex align="center" justify="space-between" w="100%" m={3}>
+            <Link to={'/authors/' + post.author.slug}>
                 <Flex align="center">
-                    <Image src={post.author.photo} size="50px" rounded="full" mr={2} />
+                    <Image src={post.author.photo} size="50px" rounded="full" mr={3} />
                     <Text fontSize="md" color="#545454">
-                        <Link to={'/authors/' + post.author.slug}>{post.author.name} </Link>
+                        {post.author.name} 
                         · {post.publishedAt}</Text>
                 </Flex>
+            </Link>
 
                 <Text fontSize="sm" color="#545454">{post.readTime}</Text>
             </Flex>
