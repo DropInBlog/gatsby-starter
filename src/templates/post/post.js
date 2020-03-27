@@ -1,6 +1,6 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
-import { jsx, css } from '@emotion/core'
+import { graphql} from 'gatsby'
+import { css } from '@emotion/core'
 
 // * Components 
 import Header from '../../components/header/header'
@@ -31,8 +31,6 @@ export const data = graphql`
             }
         }
 }`
- 
- 
 
 const PostPage = props => {
     const author = props.data.dibPosts.author
@@ -58,6 +56,7 @@ const PostPage = props => {
                 <Text fontSize="lg"
                     fontWeight="500"
                     mt={4}
+                    textAlign="center"
                     color="#545454"
                     style={{ "fontFamily": 'Dosis' }}>{post.readTime}</Text>
             </Flex>
@@ -67,20 +66,23 @@ const PostPage = props => {
     const textSizing = css`
         h1, h2, h3, h4 {
             font-size: 1.5em;
-            font-weight: 600;
+            font-weight: 600 !important;
             padding: 25px 0 25px 0;
         }
         p, ol, ul {
             font-size: 1.08em !important;
         }
+        a {
+            color: #FC8346 !important;
+        }
         ul {
             list-style-type: disc;
-            padding: 15px 0 15px 30px;
+            padding: 15px 0 15px 30px !important;
         }
         img {
             margin: 25px 0 25px 0;
             padding: 10px;
-            border: 6px solid #478DD1;
+            border: 6px solid #478DD1 !important;
             border-radius: 25px;
         }
     `

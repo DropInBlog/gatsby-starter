@@ -23,17 +23,20 @@ const Header = ({ pageTitle, subTitle, isLarge, Extras }) => {
                     <Image ml={["0", "16"]}
                         pt="6" h="80px"
                         src="../dropInBlog-logo.png" alt="DropInBlog Logo"
+                        h="auto"
+                        maxWidth={["200px", "250px", "300px", "350px"]}
                         className="logo" />
                 </Flex>
             </Link>
-
-            {pageTitle && <Flex direction="column" align="center" justify="center" h={isLarge ? "60vh" : "110%"}>
+            
+            {pageTitle && <Flex direction="column" align="center" justify="center" h={isLarge ? ["30vh", "40vh", "50vh", "60vh"] : "110%"}>
                 <Text fontSize={["3xl", "5xl", "6xl"]}
                     fontWeight="600"
-                    mb="6" mt={isLarge ? "-75px" : "30px"}
+                    mb="6" mt={isLarge ? ["0px", "25px", "-75px"] : "30px"}
                     style={{ "fontFamily": 'Dosis' }}> {pageTitle}</Text>
                 {subTitle && <Text fontSize={["lg", "xl", "2xl"]}
                     fontWeight="500"
+                    textAlign="center"
                     style={{ "fontFamily": 'Dosis' }}>{subTitle}</Text>}
                     
             </Flex>}
