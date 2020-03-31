@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import './header.sass'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Helmet } from "react-helmet"
 
 // * Components 
 import { Text, Image, Flex } from '@chakra-ui/core'
@@ -10,6 +10,17 @@ import '../../styles/global.sass'
 import './header.sass'
 
 const Header = ({ pageTitle, subTitle, isLarge, Extras }) => {
+    const data = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    title
+                    description
+                }
+            }
+        }
+    `)
+
     const links = {
         as: "li",
         color: "#414141",
@@ -17,6 +28,13 @@ const Header = ({ pageTitle, subTitle, isLarge, Extras }) => {
     }
 
     return (
+    <div>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <meta name="description" content={data.site.siteMetadata.description} />
+            <title>{data.site.siteMetadata.title}</title>
+        </Helmet>
+        
         <Flex bg="#FCE3D6" direction="column" justify="space-between" w="100%" color="FCE3D6" >
             <Link to='/'>
                 <Flex justify={["center", "flex-start"]}>
@@ -56,6 +74,7 @@ const Header = ({ pageTitle, subTitle, isLarge, Extras }) => {
                 </Flex>
             </Flex>
         </Flex>
+    </div>
     )
 }
 
