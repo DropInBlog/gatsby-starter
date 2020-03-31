@@ -53,7 +53,7 @@ const ProfilePage = props => {
                     color="#414141"
                     mt={6}
                     textAlign="center"
-                    style={{ "font-family": 'Dosis' }}>Posts by {author.name}</Text>
+                    style={{ "fontFamily": 'Dosis' }}>Posts by {author.name}</Text>
             </Flex>
         )
     }

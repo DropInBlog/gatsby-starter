@@ -30,7 +30,7 @@ const Header = ({ pageTitle, subTitle, isLarge, Extras }) => {
             </Link>
             
             {pageTitle && <Flex direction="column" align="center" justify="center" h={isLarge ? ["30vh", "40vh", "50vh", "60vh"] : "110%"}>
-                <Text fontSize={["3xl", "5xl", "6xl"]}
+                <Text fontSize={["4xl", "5xl", "6xl"]}
                     fontWeight="600"
                     mb="6" mt={isLarge ? ["0px", "25px", "-75px"] : "30px"}
                     style={{ "fontFamily": 'Dosis' }}> {pageTitle}</Text>
