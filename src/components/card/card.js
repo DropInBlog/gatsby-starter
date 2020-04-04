@@ -7,7 +7,7 @@ import { Image, Text, Flex } from '@chakra-ui/core'
 
 const Card = ({ post, tab }) => {
     return (
-        <Flex flexDirection="column" align="center" px={8} maxW="450px">
+        <Flex flexDirection="column" align="center" px={8} py={[1, 2, 3, 4]} maxW="450px">
             <Link to={"posts/" + post.slug}>
                 <Image src={post.featuredImage} rounded="5%" />
             </Link>
