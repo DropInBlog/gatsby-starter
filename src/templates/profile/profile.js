@@ -62,7 +62,11 @@ const ProfilePage = props => {
         <div>
             <Header Extras={AuthorInfo}/>
             <Flex mt={16} justify={posts.length > 1 && "center"}>
-                <Grid w="100vw" templateColumns="repeat(auto-fit, minmax(320px, 1fr))" justifyItems="center" autoFlow="row" gap={[8, 8, 4, 1]} className={posts.length > 1 && "container"}>
+                <Grid w="100vw" templateColumns={[
+                    "repeat(auto-fit, minmax(300px, 1fr))",
+                    "repeat(auto-fit, minmax(320px, 1fr))",
+                    "repeat(auto-fit, minmax(450px, 1fr))"
+                ]}  px={[0, 0, 0, 32]}  justifyItems="center" autoFlow="row" gap={[8, 8, 4, 1]} className={posts.length > 1 && "container"}>
                     {posts.map(post => <Card post={post.node} tab={post.node.categories[0]} />)}
                 </Grid>
             </Flex>
