@@ -1,8 +1,6 @@
 const path = require("path")
 const { paginate } = require('gatsby-awesome-pagination')
-
-// * Because DropInBlog delivers everything in an array (data) inside a single object, like authors or categories, we're not able to use any of the goodies that Gatsby gives us, like filter.
-// * To get around this we have to remap the data array onto a custom type. 
+ 
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
     const { createTypes } = actions
@@ -168,6 +166,8 @@ exports.onCreateNode = ({ node, actions, createNodeId }) => {
     if (node.internal.type === 'categories') remapNode('Categories', node, node.data)
     if (node.internal.type === 'data') remapNode('Posts', node, node.posts)
 }
+
+
 
 module.exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
