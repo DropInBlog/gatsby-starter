@@ -19,7 +19,7 @@
     "@emotion/styled": "^10.0.27",
     "emotion-theming": "^10.0.27",
     "env-cmd": "8.0.2",
-    "gatsby": "^2.19.7",
+    "gatsby": "^2.21.31",
     "gatsby-awesome-pagination": "^0.3.5",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-emotion": "^4.2.1",
@@ -28,6 +28,7 @@
     "gatsby-plugin-sass": "^2.1.29",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-source-custom-api": "^2.1.4",
+    "git": "^0.1.5",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -38,9 +39,9 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/DropInBlog/gatsby-starter"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/DropInBlog/gatsby-starter/issues"
   }
 }
