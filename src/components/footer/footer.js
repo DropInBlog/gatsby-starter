@@ -35,9 +35,6 @@ const Footer = () => {
         <Link to="/archive">
           <Text {...links}>Archive</Text>
         </Link>
-        <a href="https://dropinblog.com/contact/">
-          <Text {...links}>Help</Text>
-        </a>
       </Flex>
     </Flex>
   )

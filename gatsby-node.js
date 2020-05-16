@@ -77,13 +77,13 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   createTypes([
     `
         type categoryData {
-            title: String 
+            title: String
             slug: String
         }
 
         type authorData {
-            name: String 
-            slug: String 
+            name: String
+            slug: String
             photo: String
         }
 
@@ -92,10 +92,10 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
             title: String
             slug: String
             summary: String
-            content: String 
-            featuredImage: String 
-            publishedAt: String 
-            updatedAt: String 
+            content: String
+            featuredImage: String
+            publishedAt: String
+            updatedAt: String
             categories: [categoryData!]
             author: authorData
             readTime: String

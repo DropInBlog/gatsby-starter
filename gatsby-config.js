@@ -8,24 +8,9 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-emotion",
     {
-      resolve: "gatsby-source-custom-api",
+      resolve: "gatsby-source-dropinblog",
       options: {
-        rootKey: "posts",
-        url: `https://api.dropinblog.com/v1/json/?b=${process.env.DIB_KEY}&includecontent=1`,
-      },
-    },
-    {
-      resolve: "gatsby-source-custom-api",
-      options: {
-        rootKey: "categories",
-        url: `https://api.dropinblog.com/v1/json/categories/?b=${process.env.DIB_KEY}`,
-      },
-    },
-    {
-      resolve: "gatsby-source-custom-api",
-      options: {
-        rootKey: "authors",
-        url: `https://api.dropinblog.com/v1/json/authors/?b=${process.env.DIB_KEY}`,
+        id: "ZG3Y933NSM6KL74J983Y",
       },
     },
   ],

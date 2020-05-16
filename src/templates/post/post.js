@@ -17,7 +17,7 @@ export const data = graphql`
       summary
       slug
       publishedAt
-      readTime
+      readtime
       content
       featuredImage
       categories {
@@ -37,6 +37,7 @@ const PostPage = props => {
   const author = props.data.dibPosts.author
   const post = props.data.dibPosts
 
+  console.log(props.data)
   const PostInfo = () => {
     return (
       <Flex flexDirection="column" alignItems="center" justify="space-between">
@@ -75,7 +76,7 @@ const PostPage = props => {
           color="#545454"
           style={{ fontFamily: "Dosis" }}
         >
-          {post.readTime}
+          {post.readtime}
         </Text>
       </Flex>
     )

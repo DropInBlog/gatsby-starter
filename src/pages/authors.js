@@ -35,6 +35,9 @@ const AuthorsPage = () => {
 
   const authors = data.allDibAuthors.edges
   const posts = data.allDibPosts.edges
+
+  console.log(data)
+
   authors.forEach(author => {
     author.node.numberOfPosts = 0
     posts.forEach(post => {
@@ -42,7 +45,7 @@ const AuthorsPage = () => {
         author.node.numberOfPosts++
     })
   })
-  console.log(authors)
+
   return (
     <div>
       <Header pageTitle="Authors" />

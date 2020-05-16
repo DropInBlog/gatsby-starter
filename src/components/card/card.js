@@ -52,7 +52,7 @@ const Card = ({ post, tab }) => {
         </Link>
 
         <Text fontSize="sm" color="#545454">
-          {post.readTime}
+          {post.readtime}
         </Text>
       </Flex>
     </Flex>

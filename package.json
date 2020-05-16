@@ -2,7 +2,7 @@
   "name": "gatsby-starter-dropinblog",
   "private": true,
   "description": "A simple a beautiful starter for working with the DropInBlog CMS in Gatsby",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -14,12 +14,14 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@babel/core": "7.0.0",
     "@chakra-ui/core": "^0.5.2",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "babel-preset-gatsby": "^0.4.2",
     "emotion-theming": "^10.0.27",
     "env-cmd": "8.0.2",
-    "gatsby": "^2.21.31",
+    "gatsby": "^2.21.33",
     "gatsby-awesome-pagination": "^0.3.5",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-emotion": "^4.2.1",
@@ -28,6 +30,7 @@
     "gatsby-plugin-sass": "^2.1.29",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-source-custom-api": "^2.1.4",
+    "gatsby-source-dropinblog": "DropInBlog/gatsby-source-plugin",
     "git": "^0.1.5",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",

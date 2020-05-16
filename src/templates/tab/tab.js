@@ -25,7 +25,7 @@ export const data = graphql`
           summary
           slug
           publishedAt
-          readTime
+          readtime
           featuredImage
           categories {
             title
