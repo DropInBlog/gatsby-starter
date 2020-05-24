@@ -30,7 +30,7 @@
     "gatsby-plugin-sass": "^2.1.29",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-source-custom-api": "^2.1.4",
-    "gatsby-source-dropinblog": "DropInBlog/gatsby-source-plugin",
+    "gatsby-source-dropinblog": "^0.0.7",
     "git": "^0.1.5",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
