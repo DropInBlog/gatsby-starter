@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 // * Components
@@ -53,12 +53,14 @@ const PostPage = props => {
         >
           Posts by {post.title}
         </Text>
-        <Image
-          src={author.photo}
-          size={["80px", "100px", "115px", "125px"]}
-          rounded="full"
-          mt={6}
-        />
+        <Link to={`/authors/${author.slug}`}>
+          <Image
+            src={author.photo}
+            size={["80px", "100px", "115px", "125px"]}
+            rounded="full"
+            mt={6}
+          />
+        </Link>
         <Text
           fontSize="2xl"
           fontWeight="600"
