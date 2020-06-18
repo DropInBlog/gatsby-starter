@@ -119,7 +119,7 @@ const Header = ({ pageTitle, subTitle, isLarge, Extras }) => {
               <Image src="../twitter.svg" alt="Twitter Logo" h="40px" />
             </a>
             <a
-              href="https://github.com/DynamisDevelopment/dib-gatsby-starter"
+              href="https://github.com/DropInBlog/gatsby-starter-dropinblog.git"
               target="blank"
             >
               <Image src="../github.svg" alt="Github Logo" h="40px" />
