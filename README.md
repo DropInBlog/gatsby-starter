@@ -1,8 +1,11 @@
-# dib-gatsby-starter
-
-<p class="text-center">
- <img src="./static/dropInBlog-logo.png" maxWidth="300px" height="auto" alt="DropInBlog Logo">
+<p align="center">
+  <a href="https://dropinblog.com">
+    <img alt="Gatsby" src="./static/dropInBlog-logo.png" width="300" />
+  </a>
 </p>
+<h1 align="center">
+  DropInBlog's Gatsby starter
+</h1>
 
 A Gatsby plugin for creating blogs from the headless [DropInBlog CMS](https://dropinblog.com/) 🚀.
 
