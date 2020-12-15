@@ -5,7 +5,7 @@ import { css } from "@emotion/core"
 // * Components
 import Header from "../../components/header/header"
 import Footer from "../../components/footer/footer"
-import { Flex, Text, Grid, Image, Box } from "@chakra-ui/core"
+import { Flex, Text, Image, Box } from "@chakra-ui/core"
 
 // * Styles
 import "./post.sass"

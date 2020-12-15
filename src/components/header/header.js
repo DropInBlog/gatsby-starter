@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { Helmet } from "react-helmet"
-import Img from "gatsby-image"
 
 // * Components
 import { Text, Image, Flex } from "@chakra-ui/core"
@@ -48,7 +47,6 @@ const Header = ({ pageTitle, subTitle, isLarge, Extras }) => {
             <Image
               ml={["0", "16"]}
               pt="6"
-              h="80px"
               src="../dropInBlog-logo.png"
               alt="DropInBlog Logo"
               h="auto"
