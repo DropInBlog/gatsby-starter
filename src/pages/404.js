@@ -1,5 +1,8 @@
 import React from 'react'
 
+// * Styles
+import "../styles/global.sass"
+
 const NotFoundPage = () => {
     return (
         <div>

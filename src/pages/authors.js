@@ -6,9 +6,6 @@ import Header from "../components/header/header"
 import Footer from "../components/footer/footer"
 import { Flex, Text, Image } from "@chakra-ui/core"
 
-// * Styles
-import "../styles/authors.sass"
-
 const AuthorsPage = () => {
   const data = useStaticQuery(graphql`
     query {

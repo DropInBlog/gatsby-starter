@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+
+// * Styles
 import "./card.sass"
 
 // * Components
