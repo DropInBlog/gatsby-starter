@@ -23,14 +23,14 @@ First you'll need to [create an account](https://dropinblog.com/signup/?plan=6) 
 If you have NPM or Yarn, you can clone the repo.
 
 ```terminal
-$ git clone https://github.com/DropInBlog/gatsby-starter.git
+$ git clone https://github.com/DropInBlog/gatsby-starter-dropinblog.git
 $ yarn install
 ```
 
 Or use the Gatsby CLI.
 
 ```terminal
-$ gatsby new dropinblog-starter https://github.com/DropInBlog/gatsby-starter.git
+$ gatsby new dropinblog-starter https://github.com/DropInBlog/gatsby-starter-dropinblog.git
 ```
 
 When that's done all you need to connect to your account is to drop in your account's unique id into the [gatsby-source-dropinblog](https://github.com/DropInBlog/gatsby-source-plugin) plugin.
@@ -45,7 +45,7 @@ With that, all of your data should be available as `dibPosts`, `dibAuthors`, and
 
 ## Essential Commands
 
-### `yarn dev`
+### `yarn develop`
 
 Run the site locally.
 
